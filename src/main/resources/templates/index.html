@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<title>Signup Page</title>
+</head>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" th:action="@{/register}" action="#" th:object="${user}" method="post">
+					<span class="login100-form-title">
+						create new profile
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid name is required">
+						<input class="input100" type="text" name="user_fname" placeholder="Name" th:field="*{user_fname}">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid surname is required">
+						<input class="input100" type="text" name="user_lname" placeholder="last name" th:field="*{user_lname}">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@aspirecollege.co.za">
+						<input class="input100" type="text" name="user_email" placeholder="Email/Username" th:field="*{user_email}">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="user_password" placeholder="Password"th:field="*{user_password}">
+						<span class="focus-input100"></span>
+					</div>
+					<!-- <div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Confirm Password"th:field="*{Password}">
+						<span class="focus-input100"></span>
+					</div> -->
+					<div >
+						<input type="file" Password" name= "user_image" th:field="*{user_image}" accept="image/jpeg">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							create profile
+						</button>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="login.html">
+							Log in if you already have an account
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Scripts  -->
+	<script src="js/main.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+</body>
+</html>
